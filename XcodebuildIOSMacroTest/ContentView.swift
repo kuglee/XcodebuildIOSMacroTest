@@ -1,9 +1,21 @@
-//
-//  ContentView.swift
-//  XcodebuildIOSMacroTest
-//
-//  Created by Librecz Gábor on 02/02/2024.
-//
+import ComposableArchitecture
+
+@Reducer struct AppFeature {
+  @ObservableState struct State: Equatable {
+    @Presents var test: String? = nil
+  }
+
+  enum Action { case noop }
+
+  var body: some ReducerOf<Self> {
+    Reduce { state, action in
+      switch action {
+      case .noop: return .none
+      }
+    }
+  }
+}
+
 
 import SwiftUI
 
